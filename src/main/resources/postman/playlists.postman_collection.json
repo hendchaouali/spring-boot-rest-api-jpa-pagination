@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "9b4c0f3b-444e-489a-a032-45e52f623968",
+		"_postman_id": "7c23b27f-a0b1-4042-959b-a815938c93eb",
 		"name": "playlists",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -50,13 +50,13 @@
 			"response": []
 		},
 		{
-			"name": "updatePlaylist",
+			"name": "updateSong",
 			"request": {
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"category\": \"CLASSICAL\",\r\n   \"id\": 1,\r\n            \"title\": \"I'm Not Lost  V7\",\r\n            \"description\": \"Album myk  V7\",\r\n            \"duration\": \"2:01\",\r\n            \"artistName\": \"SAM\"\r\n}",
+					"raw": "{\r\n    \"category\": \"CLASSICAL\",\r\n   \"id\": 8,\r\n            \"title\": \"I'm Not Lost  V7\",\r\n            \"description\": \"Album myk  V7\",\r\n            \"duration\": \"2:01\",\r\n            \"artistName\": \"SAM\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -99,12 +99,22 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/songs",
+					"raw": "{{url}}/songs?page=0&size=5",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"songs"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						}
 					]
 				}
 			},
@@ -116,7 +126,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/songs/category/POP",
+					"raw": "{{url}}/songs/category/POP?page=0&size=5",
 					"host": [
 						"{{url}}"
 					],
@@ -124,6 +134,16 @@
 						"songs",
 						"category",
 						"POP"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						}
 					]
 				}
 			},
@@ -135,14 +155,24 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/songs/artist/sam",
+					"raw": "{{url}}/songs/artist/SAM?page=0&size=5",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"songs",
 						"artist",
-						"sam"
+						"SAM"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						}
 					]
 				}
 			},
